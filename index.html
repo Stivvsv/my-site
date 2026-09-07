@@ -1,64 +1,41 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Интеграция mesh-сетей, защищённые прокси и VPN, управляющие боты и решения для B2C.">
-  <title>MeshLink — распределённые сети и безопасное подключение</title>
-  <style>
-    :root { --bg:#07111f; --card:#0d1b2e; --text:#eef5ff; --muted:#9db0c7; --accent:#63d5ff; --line:#1c334d; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif; color:var(--text); background:radial-gradient(circle at 80% 0%,#123052 0,transparent 38%),var(--bg); line-height:1.6; }
-    .wrap { width:min(1120px,92%); margin:auto; }
-    header { padding:26px 0; border-bottom:1px solid var(--line); }
-    nav { display:flex; justify-content:space-between; align-items:center; gap:20px; }
-    .logo { font-weight:800; letter-spacing:.08em; }
-    nav a { color:var(--muted); text-decoration:none; margin-left:22px; }
-    nav a:hover { color:var(--text); }
-    .hero { padding:100px 0 80px; max-width:850px; }
-    .eyebrow { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; }
-    h1 { font-size:clamp(2.7rem,7vw,5.4rem); line-height:.98; margin:18px 0 24px; letter-spacing:-.05em; }
-    .lead { font-size:1.2rem; color:var(--muted); max-width:720px; }
-    .actions { margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-block; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid var(--line); }
-    .primary { background:var(--accent); color:#04101b; }
-    .secondary { color:var(--text); }
-    section { padding:70px 0; border-top:1px solid var(--line); }
-    h2 { font-size:2rem; margin-top:0; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .card { background:rgba(13,27,46,.78); border:1px solid var(--line); border-radius:16px; padding:25px; }
-    .card h3 { margin-top:0; }
-    .card p, .note { color:var(--muted); }
-    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-    .step strong { display:block; color:var(--accent); font-size:.8rem; margin-bottom:8px; }
-    footer { padding:35px 0 50px; color:var(--muted); font-size:.9rem; }
-    @media (max-width:800px) { .grid,.steps { grid-template-columns:1fr; } nav a { margin-left:10px; } .hero { padding-top:70px; } }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Проектирование Mesh-сетей, автоматизации и защищённого подключения для частных клиентов и небольших объектов.">
+<title>MeshCore — Mesh-сети и защищённое подключение</title>
+<style>
+:root{--bg:#071018;--surface:#0d1822;--surface2:#111f2c;--text:#f2f7fb;--muted:#93a6b6;--line:#203443;--accent:#61e7c2;--accent2:#78b9ff;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#071018 0%,#091521 55%,#071018 100%);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}button,input{font:inherit}.wrap{width:min(var(--max),92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(7,16,24,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(32,52,67,.75)}nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.08em}.brand span{color:var(--accent)}.links{display:flex;gap:28px;color:var(--muted)}.links a{text-decoration:none}.links a:hover{color:var(--text)}
+.hero{padding:92px 0 76px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.eyebrow{color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.94;letter-spacing:-.065em;margin:18px 0 26px;max-width:850px}.hero p{color:var(--muted);font-size:1.18rem;max-width:700px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:11px;text-decoration:none;font-weight:800;border:1px solid var(--line);cursor:pointer}.primary{background:var(--accent);color:#05120f;border-color:var(--accent)}.ghost{background:transparent;color:var(--text)}
+.network{min-height:390px;position:relative;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 50% 45%,rgba(97,231,194,.12),transparent 38%),var(--surface);overflow:hidden}.network:before{content:"";position:absolute;inset:13%;background:linear-gradient(30deg,transparent 48%,rgba(120,185,255,.22) 49%,rgba(120,185,255,.22) 51%,transparent 52%),linear-gradient(150deg,transparent 48%,rgba(97,231,194,.2) 49%,rgba(97,231,194,.2) 51%,transparent 52%);opacity:.8}.node{position:absolute;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 7px rgba(97,231,194,.1),0 0 28px rgba(97,231,194,.45)}.n1{left:20%;top:28%}.n2{left:48%;top:16%}.n3{right:18%;top:35%}.n4{left:34%;bottom:20%}.n5{right:30%;bottom:16%}.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:96px;height:96px;border:1px solid rgba(97,231,194,.45);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-weight:900;font-size:.8rem;background:rgba(7,16,24,.8)}
+section{padding:76px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}.section-head h2{font-size:2.2rem;line-height:1.05;margin:0;letter-spacing:-.035em}.section-head p{max-width:560px;color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(17,31,44,.9),rgba(13,24,34,.8));border:1px solid var(--line);border-radius:18px;padding:26px}.icon{color:var(--accent);font-size:1.4rem}.card h3{margin:12px 0 8px;font-size:1.15rem}.card p{color:var(--muted);margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}.stat{background:var(--surface);padding:25px}.stat b{display:block;font-size:2rem;letter-spacing:-.04em}.stat span{color:var(--muted);font-size:.9rem}
+.calculator{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}.range{width:100%;accent-color:var(--accent)}.range-row{display:flex;justify-content:space-between;gap:15px}.range-value{font-weight:900;color:var(--accent)}.estimate{font-size:2.8rem;font-weight:900;letter-spacing:-.05em;margin:22px 0 5px}.small{color:var(--muted);font-size:.9rem}.checks{display:grid;gap:10px;margin-top:20px}.checks label{display:flex;gap:10px;align-items:center;color:var(--muted)}input[type=checkbox]{accent-color:var(--accent)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:22px;border-left:2px solid var(--line)}.step b{color:var(--accent);font-size:.78rem;letter-spacing:.1em}.step h3{margin:10px 0 5px}.step p{color:var(--muted);margin:0;font-size:.94rem}
+.faq{max-width:850px}.faq details{border-top:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);margin:12px 0 0}
+.contact{display:grid;grid-template-columns:1fr .9fr;gap:30px;align-items:start}.contact h2{font-size:3rem;line-height:1;margin:0 0 15px}.form{display:grid;gap:12px}.form input,.form textarea{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:10px;background:#08131d;color:var(--text);outline:none}.form textarea{min-height:120px;resize:vertical}.form input:focus,.form textarea:focus{border-color:var(--accent)}
+footer{padding:35px 0 55px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:20px}.note{font-size:.78rem;color:#718697;margin-top:18px}
+@media(max-width:850px){.hero,.calculator,.contact{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.links{display:none}.network{min-height:300px}.hero{padding-top:65px}.section-head{display:block}.section-head p{margin-top:12px}footer{display:block}}
+@media(max-width:500px){.stats,.process{grid-template-columns:1fr}.hero h1{font-size:3.2rem}.network{min-height:260px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="wrap"><nav><div class="logo">MESHLINK</div><div><a href="#solutions">Решения</a><a href="#process">Как работаем</a><a href="#contact">Контакты</a></div></nav></div>
-  </header>
-  <main><div class="wrap">
-    <section class="hero" style="border-top:0">
-      <div class="eyebrow">Mesh · Proxy · VPN · Bots</div>
-      <h1>Связываем устройства в единую сеть.</h1>
-      <p class="lead">Проектируем распределённые mesh-сети для площадей от 150 до 1000+ м², автоматизацию управления и защищённый доступ для B2C-продуктов.</p>
-      <div class="actions"><a class="btn primary" href="#contact">Обсудить проект</a><a class="btn secondary" href="#solutions">Посмотреть решения</a></div>
-    </section>
-    <section id="solutions"><h2>Что интегрируем</h2><div class="grid">
-      <article class="card"><h3>Mesh-сети</h3><p>Бесшовное покрытие, сегментация устройств, мониторинг узлов и устойчивое соединение в помещениях и на территориях до 1000+ м².</p></article>
-      <article class="card"><h3>Управляющие боты</h3><p>Боты для уведомлений, диагностики, контроля состояния узлов и выполнения заранее заданных административных сценариев.</p></article>
-      <article class="card"><h3>Proxy & VPN</h3><p>Защищённый удалённый доступ, маршрутизация и изоляция клиентских сегментов с учётом требований безопасности и приватности.</p></article>
-    </div></section>
-    <section id="process"><h2>От схемы до работающей системы</h2><div class="steps">
-      <div class="step"><strong>01 · АУДИТ</strong>Радиопланирование и требования площадки.</div>
-      <div class="step"><strong>02 · АРХИТЕКТУРА</strong>Схема узлов, сегментов и сервисов.</div>
-      <div class="step"><strong>03 · ИНТЕГРАЦИЯ</strong>Настройка сети, автоматизации и защищённого доступа.</div>
-      <div class="step"><strong>04 · КОНТРОЛЬ</strong>Мониторинг, диагностика и сопровождение.</div>
-    </div><p class="note">Решения проектируются для легитимного использования и с учётом требований безопасности, приватности и правил площадки.</p></section>
-    <section id="contact"><h2>Готовы обсудить задачу?</h2><p class="lead">Опишите площадь, количество устройств и сценарии использования — подготовим архитектуру следующего шага.</p><a class="btn primary" href="mailto:hello@example.com">Связаться с нами</a></section>
-  </div></main>
-  <footer><div class="wrap">© 2026 MeshLink. Secure connectivity & automation.</div></footer>
-</body>
-</html>
+<header><div class="wrap"><nav><a class="brand" href="#top">MESH<span>CORE</span></a><div class="links"><a href="#solutions">Решения</a><a href="#calculator">Расчёт</a><a href="#process">Процесс</a><a href="#faq">FAQ</a></div><a class="btn ghost" href="#contact">Обсудить проект</a></nav></div></header>
+<main id="top"><div class="wrap">
+<section class="hero" style="border-top:0"><div><div class="eyebrow">Mesh · Automation · Secure access</div><h1>Сеть, которая держит связь.</h1><p>Проектируем и интегрируем Mesh-инфраструктуру для объектов от 150 до 1000+ м², автоматизацию контроля и защищённый доступ для частных клиентов.</p><div class="actions"><a class="btn primary" href="#calculator">Рассчитать решение</a><a class="btn ghost" href="#solutions">Что мы делаем ↓</a></div></div><div class="network" aria-label="Схема mesh-сети"><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><i class="node n5"></i><div class="core">MESH<br>CORE</div></div></section>
+<section id="solutions"><div class="section-head"><h2>Инфраструктура без лишней сложности</h2><p>От обследования площадки до мониторинга: собираем решения под реальную нагрузку, площадь и сценарии использования.</p></div><div class="grid"><article class="card"><div class="icon">◈</div><h3>Mesh Wi‑Fi</h3><p>Бесшовное покрытие, планирование размещения узлов, сегментация сети и контроль качества соединения.</p></article><article class="card"><div class="icon">⌁</div><h3>Управляющие боты</h3><p>Уведомления, диагностика, контроль доступности узлов и автоматизация повторяемых административных задач.</p></article><article class="card"><div class="icon">◉</div><h3>VPN & Proxy</h3><p>Защищённый удалённый доступ и управляемая маршрутизация для легитимных пользовательских и корпоративных сценариев.</p></article></div></section>
+<section><div class="stats"><div class="stat"><b>150–1000+</b><span>м² площадь</span></div><div class="stat"><b>24/7</b><span>контроль доступности</span></div><div class="stat"><b>1 сеть</b><span>единая архитектура</span></div><div class="stat"><b>B2C</b><span>ориентация на пользователя</span></div></div></section>
+<section id="calculator"><div class="section-head"><h2>Предварительный расчёт</h2><p>Это ориентир для обсуждения проекта, а не коммерческое предложение. Финальная конфигурация зависит от планировки, материалов стен и числа устройств.</p></div><div class="calculator"><div class="panel"><div class="range-row"><strong>Площадь объекта</strong><span class="range-value" id="areaOut">300 м²</span></div><input class="range" id="area" type="range" min="150" max="1000" step="50" value="300"><div class="checks"><label><input id="bot" type="checkbox"> Управляющий бот</label><label><input id="vpn" type="checkbox"> VPN / защищённый доступ</label><label><input id="monitor" type="checkbox" checked> Мониторинг сети</label></div></div><div class="panel"><div class="small">Ориентировочный бюджет</div><div class="estimate" id="price">€1 650</div><div class="small">оборудование + базовая интеграция</div><p class="note">Калькулятор демонстрационный. Цены и состав оборудования уточняются после обследования объекта.</p></div></div></section>
+<section id="process"><div class="section-head"><h2>Четыре шага</h2><p>Прозрачный путь от идеи до работающей сети.</p></div><div class="process"><div class="step"><b>01 / AUDIT</b><h3>Обследуем</h3><p>Площадь, планировка, эфир и требования к покрытию.</p></div><div class="step"><b>02 / DESIGN</b><h3>Проектируем</h3><p>Узлы, сегменты, маршрутизацию и сценарии доступа.</p></div><div class="step"><b>03 / BUILD</b><h3>Интегрируем</h3><p>Настраиваем оборудование, автоматизацию и политики доступа.</p></div><div class="step"><b>04 / CARE</b><h3>Сопровождаем</h3><p>Мониторинг, диагностика и плановые улучшения.</p></div></div></section>
+<section id="faq"><div class="section-head"><h2>Частые вопросы</h2></div><div class="faq"><details><summary>Подойдёт ли Mesh для 150–1000 м²?</summary><p>Да, но количество узлов нельзя корректно определить только по площади. Важны этажность, материалы стен, планировка, радиообстановка и требуемая плотность устройств.</p></details><details><summary>Можно ли объединить Mesh и VPN?</summary><p>Да. VPN можно использовать как отдельный защищённый канал удалённого доступа, а Mesh — как локальную инфраструктуру. Архитектура зависит от задачи.</p></details><details><summary>Что делает управляющий бот?</summary><p>Он может получать телеметрию, сообщать об отказах и запускать заранее определённые административные сценарии. Права бота ограничиваются принципом минимально необходимого доступа.</p></details><details><summary>Можно ли начать с небольшого объекта?</summary><p>Да. Архитектуру можно заложить с запасом, а инфраструктуру расширять по мере роста числа устройств и требований.</p></details></div></section>
+<section id="contact"><div class="contact"><div><div class="eyebrow">Start a project</div><h2>Расскажите, что нужно связать.</h2><p style="color:var(--muted);max-width:550px">Укажите площадь, количество пользователей и желаемые функции. Форма пока демонстрационная — после подключения backend её можно направить в Telegram, email или CRM.</p></div><form class="form" onsubmit="event.preventDefault();alert('Заявка подготовлена. Подключите backend формы, чтобы отправлять её на сервер.');"><input required placeholder="Ваше имя"><input type="email" required placeholder="Email"><input placeholder="Площадь, м²"><textarea placeholder="Коротко опишите задачу"></textarea><button class="btn primary" type="submit">Отправить заявку</button></form></div></section>
+</div></main>
+<footer class="wrap"><span>© 2026 MeshCore</span><span>Mesh infrastructure · Automation · Secure connectivity</span></footer>
+<script>
+const area=document.getElementById('area'),out=document.getElementById('areaOut'),price=document.getElementById('price'),checks=[document.getElementById('bot'),document.getElementById('vpn'),document.getElementById('monitor')];
+function calc(){const a=+area.value;out.textContent=a+' м²';let total=850+Math.ceil(a/150)*400;if(checks[0].checked)total+=280;if(checks[1].checked)total+=220;if(checks[2].checked)total+=180;price.textContent=new Intl.NumberFormat('ru-RU',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(total)}
+area.addEventListener('input',calc);checks.forEach(x=>x.addEventListener('change',calc));calc();
+</script>
+</body></html>
