@@ -1,100 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сетевой инженер в Москве</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #0a3d62;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #1e5f8a;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .container {
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            background: #0a3d62;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        button {
-            background: #0a3d62;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интеграция mesh-сетей, защищённые прокси и VPN, управляющие боты и решения для B2C.">
+  <title>MeshLink — распределённые сети и безопасное подключение</title>
+  <style>
+    :root { --bg:#07111f; --card:#0d1b2e; --text:#eef5ff; --muted:#9db0c7; --accent:#63d5ff; --line:#1c334d; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif; color:var(--text); background:radial-gradient(circle at 80% 0%,#123052 0,transparent 38%),var(--bg); line-height:1.6; }
+    .wrap { width:min(1120px,92%); margin:auto; }
+    header { padding:26px 0; border-bottom:1px solid var(--line); }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .logo { font-weight:800; letter-spacing:.08em; }
+    nav a { color:var(--muted); text-decoration:none; margin-left:22px; }
+    nav a:hover { color:var(--text); }
+    .hero { padding:100px 0 80px; max-width:850px; }
+    .eyebrow { color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; }
+    h1 { font-size:clamp(2.7rem,7vw,5.4rem); line-height:.98; margin:18px 0 24px; letter-spacing:-.05em; }
+    .lead { font-size:1.2rem; color:var(--muted); max-width:720px; }
+    .actions { margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid var(--line); }
+    .primary { background:var(--accent); color:#04101b; }
+    .secondary { color:var(--text); }
+    section { padding:70px 0; border-top:1px solid var(--line); }
+    h2 { font-size:2rem; margin-top:0; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { background:rgba(13,27,46,.78); border:1px solid var(--line); border-radius:16px; padding:25px; }
+    .card h3 { margin-top:0; }
+    .card p, .note { color:var(--muted); }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .step strong { display:block; color:var(--accent); font-size:.8rem; margin-bottom:8px; }
+    footer { padding:35px 0 50px; color:var(--muted); font-size:.9rem; }
+    @media (max-width:800px) { .grid,.steps { grid-template-columns:1fr; } nav a { margin-left:10px; } .hero { padding-top:70px; } }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>Сетевой инженер</h1>
-    <p>Настройка Wi‑Fi, Mesh систем и усиление связи</p>
-</header>
-
-<nav>
-    <a href="#services">Услуги</a>
-    <a href="#about">О нас</a>
-    <a href="#contact">Контакты</a>
-</nav>
-
-<div class="container">
-
-    <div id="services" class="card">
-        <h2>Наши услуги</h2>
-        <ul>
-            <li>Настройка роутеров</li>
-            <li>Mesh Wi‑Fi для больших домов и офисов</li>
-            <li>Усиление мобильной связи (4G/5G)</li>
-            <li>Настройка сетей для бизнеса</li>
-        </ul>
-    </div>
-
-    <div id="about" class="card">
-        <h2>О нас</h2>
-        <p>Работаем в Москве и Московской области. Помогаем настроить стабильный интернет и связь даже в сложных условиях.</p>
-    </div>
-
-    <div id="contact" class="card">
-        <h2>Связаться с нами</h2>
-        <p>Телефон: +7 (965) 303-07-71</p>
-        <p>WhatsApp / Telegram</p>
-        <button onclick="alert('Позвоните нам!')">Заказать услугу</button>
-    </div>
-
-</div>
-
-<footer>
-    <p>© 2000 Сетевой инженер</p>
-</footer>
-
+  <header>
+    <div class="wrap"><nav><div class="logo">MESHLINK</div><div><a href="#solutions">Решения</a><a href="#process">Как работаем</a><a href="#contact">Контакты</a></div></nav></div>
+  </header>
+  <main><div class="wrap">
+    <section class="hero" style="border-top:0">
+      <div class="eyebrow">Mesh · Proxy · VPN · Bots</div>
+      <h1>Связываем устройства в единую сеть.</h1>
+      <p class="lead">Проектируем распределённые mesh-сети для площадей от 150 до 1000+ м², автоматизацию управления и защищённый доступ для B2C-продуктов.</p>
+      <div class="actions"><a class="btn primary" href="#contact">Обсудить проект</a><a class="btn secondary" href="#solutions">Посмотреть решения</a></div>
+    </section>
+    <section id="solutions"><h2>Что интегрируем</h2><div class="grid">
+      <article class="card"><h3>Mesh-сети</h3><p>Бесшовное покрытие, сегментация устройств, мониторинг узлов и устойчивое соединение в помещениях и на территориях до 1000+ м².</p></article>
+      <article class="card"><h3>Управляющие боты</h3><p>Боты для уведомлений, диагностики, контроля состояния узлов и выполнения заранее заданных административных сценариев.</p></article>
+      <article class="card"><h3>Proxy & VPN</h3><p>Защищённый удалённый доступ, маршрутизация и изоляция клиентских сегментов с учётом требований безопасности и приватности.</p></article>
+    </div></section>
+    <section id="process"><h2>От схемы до работающей системы</h2><div class="steps">
+      <div class="step"><strong>01 · АУДИТ</strong>Радиопланирование и требования площадки.</div>
+      <div class="step"><strong>02 · АРХИТЕКТУРА</strong>Схема узлов, сегментов и сервисов.</div>
+      <div class="step"><strong>03 · ИНТЕГРАЦИЯ</strong>Настройка сети, автоматизации и защищённого доступа.</div>
+      <div class="step"><strong>04 · КОНТРОЛЬ</strong>Мониторинг, диагностика и сопровождение.</div>
+    </div><p class="note">Решения проектируются для легитимного использования и с учётом требований безопасности, приватности и правил площадки.</p></section>
+    <section id="contact"><h2>Готовы обсудить задачу?</h2><p class="lead">Опишите площадь, количество устройств и сценарии использования — подготовим архитектуру следующего шага.</p><a class="btn primary" href="mailto:hello@example.com">Связаться с нами</a></section>
+  </div></main>
+  <footer><div class="wrap">© 2026 MeshLink. Secure connectivity & automation.</div></footer>
 </body>
 </html>
